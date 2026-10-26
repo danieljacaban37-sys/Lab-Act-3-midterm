@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Seminar Registration Form</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>IT Seminar Registration</h1>
+      <p class="subtitle">Universidad de Dagupan — School of Information Technology Education</p>
+    </header>
+
+    <form id="registrationForm" novalidate>
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" required
+               aria-describedby="fullNameError" aria-invalid="false"
+               autocomplete="name">
+        <span id="fullNameError" class="error" role="alert"></span>
+      </div>
+
+      <!-- Student Number -->
+      <div class="form-group">
+        <label for="studentNumber">Student Number</label>
+        <input type="text" id="studentNumber" name="studentNumber" required
+               placeholder="24-1234-123"
+               aria-describedby="studentNumberError" aria-invalid="false"
+               autocomplete="off">
+        <span id="studentNumberError" class="error" role="alert"></span>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required
+               aria-describedby="emailError" aria-invalid="false"
+               autocomplete="email">
+        <span id="emailError" class="error" role="alert"></span>
+      </div>
+
+      <!-- Mobile Number -->
+      <div class="form-group">
+        <label for="mobileNumber">Mobile Number</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" required
+               placeholder="09XXXXXXXXX or +639XXXXXXXXX"
+               aria-describedby="mobileNumberError" aria-invalid="false"
+               autocomplete="tel">
+        <span id="mobileNumberError" class="error" role="alert"></span>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required
+               aria-describedby="passwordError passwordFeedback" aria-invalid="false"
+               autocomplete="new-password">
+        <span id="passwordError" class="error" role="alert"></span>
+        <span id="passwordFeedback" class="feedback" aria-live="polite"></span>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required
+               aria-describedby="confirmPasswordError" aria-invalid="false"
+               autocomplete="new-password">
+        <span id="confirmPasswordError" class="error" role="alert"></span>
+      </div>
+
+      <!-- Course -->
+      <div class="form-group">
+        <label for="course">Course</label>
+        <select id="course" name="course" required
+                aria-describedby="courseError" aria-invalid="false">
+          <option value="" selected disabled>Select your course</option>
+          <option value="BSIT">BSIT</option>
+          <option value="BSCS">BSCS</option>
+        </select>
+        <span id="courseError" class="error" role="alert"></span>
+      </div>
+
+      <!-- Terms -->
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="terms" name="terms" required
+               aria-describedby="termsError" aria-invalid="false">
+        <label for="terms">I agree to the terms and conditions of the IT seminar</label>
+        <span id="termsError" class="error" role="alert"></span>
+      </div>
+
+      <!-- Buttons -->
+      <div class="button-group">
+        <button type="submit" id="registerBtn">Register</button>
+        <button type="reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="success" hidden></div>
+
+    <!-- Registration Summary -->
+    <div id="registrationSummary" class="summary" hidden>
+      <h2>Registration Summary</h2>
+      <p><strong>Full Name:</strong> <span id="summaryName"></span></p>
+      <p><strong>Student Number:</strong> <span id="summaryStudentNumber"></span></p>
+      <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
+      <p><strong>Mobile Number:</strong> <span id="summaryMobileNumber"></span></p>
+      <p><strong>Course:</strong> <span id="summaryCourse"></span></p>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
